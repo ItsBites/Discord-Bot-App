@@ -1,0 +1,204 @@
+body {
+  -webkit-user-select: none;
+  padding: 0px;
+  margin: 0px;
+  overflow: hidden;
+  cursor: default;
+}
+#page{
+  background-color: #36393e;
+  height: 100vh;
+  color: #8a8e94;
+  font-family: Fantasy, Sans-serif, serif;
+}
+#PickBar {
+  -webkit-app-region: drag;
+  height: 22px;
+  line-height: 22px;
+  white-space: nowrap;
+  background-color: #202225;
+  font-size: 12px;
+}
+#BotList {
+  background-color: #202225;
+  /*float: left;*/
+  height: calc(100vh - 22px);
+  width: 70px;
+  padding-top: 10px;
+}
+.bubble {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  overflow: hidden;
+  animation-duration: 0.5s;
+  animation-name: bubble-reverse;
+  animation-timing-function: ease-out;
+  margin-bottom: 8px;
+  background-color: #2f3136;
+  cursor: pointer;
+}
+.bubble:hover {
+  animation-duration: 0.5s;
+  animation-name: bubble;
+  border-radius: 15px;
+}
+.bubble img {
+  width: 50px;
+  height: 50px;
+}
+#CloseButton {
+  width: 28px;
+  height: 22px;
+  float: right;
+  cursor: pointer;
+  position: relative;
+  -webkit-app-region: no-drag;
+  z-index: 600;
+}
+#CloseButton svg {
+  position: relative;
+  top: 1px;
+}
+#CloseButton:hover {
+  background-color: #f04747;
+}
+@keyframes bubble {
+  0% {
+    border-radius: 50px;
+  }
+
+  50% {
+    border-radius: 10px;
+  }
+
+  90% {
+    border-radius: 17px;
+  }
+  100% {
+    border-radius: 15px;
+  }
+}
+@keyframes bubble-reverse {
+  0% {
+    border-radius: 15px;
+  }
+
+  100% {
+    border-radius: 50px;
+  }
+}
+#list {
+  background-color: #2f3136;
+  width: 240px;
+  height: calc(100vh - 22px);
+  position: absolute;
+  top: 22px;
+  left: 70px;
+}
+#wordmark {
+  font-size: 0;
+  left: 0;
+  opacity: .6;
+  padding: 4px 8px 3px;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  z-index: 600;
+}
+#guild-separator {
+  background: none;
+  height: 2px;
+  margin-bottom: 10px;
+  position: relative;
+  width: 50px;
+}
+#guild-separator:after {
+  background: #2f3136;
+  content: " ";
+  height: 2px;
+  left: 20%;
+  position: absolute;
+  right: 20%;
+  top: 0;
+}
+#param {
+  background-color: #2f3136;
+  width: 50px;
+  height: 50px;
+}
+#param img {
+  width: 35px;
+  height: 35px;
+  position: relative;
+  top: calc(24px - calc(35px / 2));
+}
+#param:hover {
+  background-color: #7289da;
+}
+.bot-add {
+  background: #1e2124;
+  border: 1px dashed #535559;
+  border-radius: 50%;
+  color: #535559;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 100%;
+  padding: 0;
+  text-align: center;
+  transition: border-color .25s ease,color .25s ease;
+  margin-bottom: 8px;
+  height: 50px;
+  position: relative;
+  width: 50px;
+  z-index: 1;
+  cursor: pointer;
+}
+.bot-add:hover {
+  border-color: hsla(0,0%,100%,.75);
+  color: hsla(0,0%,100%,.75);
+}
+.bot-add:focus {
+  outline: none;
+}
+
+#black {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  background-color: black;
+  opacity: 0.85;
+  height: 100vh;
+  width: 100vw;
+  z-index: 500;
+}
+#modalAddBot {
+  padding: 30px 24px
+}
+#modalAddBot header {
+  color: #7289da;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: Whitney,Helvetica Neue,Helvetica,Arial,sans-serif;
+  margin-bottom: 40px;
+  margin-top: 6px;
+  text-align: center;
+}
+
+#modalAddBotContainer {
+  height: 420px;
+  width: 520px;
+  border-radius: 5px;
+
+  background-color: white;
+
+  z-index: 505;
+  position: absolute;
+  left: calc(50vw - 270px);
+  top: calc(50vh - 210px);
+}
+
+.botAddShow {
+  visibility: hidden;
+}
